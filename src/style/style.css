@@ -1,0 +1,8 @@
+.todoInput{
+    outline: none;
+    border: none;
+    background: transparent;
+    text-transform: capitalize;
+}
+.todoInput:focus{
+}
