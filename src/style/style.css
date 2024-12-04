@@ -1,8 +1,42 @@
-.todoInput{
-    outline: none;
-    border: none;
-    background: transparent;
-    text-transform: capitalize;
+.todoInput {
+	outline: none;
+	border: none;
+	background: transparent;
+	text-transform: capitalize;
 }
-.todoInput:focus{
+.list-container {
+	min-height: 80dvh;
+    height: fit-content;
+    background: linear-gradient(orange,green);
+}
+.todoInput:focus {
+}
+.list{
+    background-color: rgba(255, 255, 255,0.5);
+}
+.eachBox:active .list{
+    background-color: burlywood;
+}
+.eachBox:hover .list{
+    background-color: rgba(255, 255, 255,0.8);
+}
+.eachBox button{
+	height: 100% !important;
+}
+@keyframes sildeLeft {
+	from{
+		transform: translateX(-50%);
+		opacity: 0;
+	}to{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+.eachBox{
+	animation: sildeLeft 0.5s ease-in-out !important;
+}
+.info{
+	position: sticky;
+	top: 0;
+	
 }
