@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	value: 0,
 	name: "Olaoluwa",
-	myList: [],
+	myList: [{task:'Go home'}, {task:'Go to work'}, {task:'Go to school'}],
 };
 
 export const counterSlice = createSlice({

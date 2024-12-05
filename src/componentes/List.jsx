@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Box from "./Box";
 import { adjustList } from "../redux/store";
+// import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import "../style/style.css"
 
 const List = () => {
 	const myList = useSelector((state) => state.reducer.myList);
@@ -13,7 +15,7 @@ const List = () => {
 	};
 
 	return (
-		<div className='shadow list-container p-3 py-4 mb-5'>
+		<div className='shadow list-container px-md-3 py-4 mb-5'>
 			{myList.length <= 0 ? (
 				<div className='alert alert-light mx-auto text-center'>
 					Your Task Is Empty, Update It With Task Ahead
@@ -25,7 +27,7 @@ const List = () => {
 							return (
 								<li
 									key={index}
-									className=' my-1  '
+									className=' my-1  taskList'
 									draggable
 									// onDragEnd={()=>dispatch(adjustList({array:myList,fromIndex:index,toIndex:overIndex}))}
 									onDragEnd={() => updateList([...myList], index, overIndex)}
@@ -34,6 +36,7 @@ const List = () => {
 									}}
 								>
 									<Box index={index} task={tasks.task} />
+									
 								</li>
 							);
 						})}

@@ -2,41 +2,77 @@
 	outline: none;
 	border: none;
 	background: transparent;
-	text-transform: capitalize;
+	/* text-transform: capitalize; */
+}
+.todoInput::first-letter {
+	text-transform: uppercase !important;
+}
+
+.taskList::first-letter {
+	text-transform: uppercase !important;
 }
 .list-container {
 	min-height: 80dvh;
-    height: fit-content;
-    background: linear-gradient(orange,green);
+	height: fit-content;
+	background: linear-gradient(orange, green);
 }
 .todoInput:focus {
 }
-.list{
-    background-color: rgba(255, 255, 255,0.5);
+.list {
+	background-color: rgba(255, 255, 255, 0.5);
 }
-.eachBox:active .list{
-    background-color: burlywood;
+.eachBox:active .list {
+	background-color: burlywood;
 }
-.eachBox:hover .list{
-    background-color: rgba(255, 255, 255,0.8);
+.eachBox:hover .list {
+	background-color: rgba(255, 255, 255, 0.8);
 }
-.eachBox button{
+.eachBox button {
 	height: 100% !important;
 }
 @keyframes sildeLeft {
-	from{
+	from {
 		transform: translateX(-50%);
 		opacity: 0;
-	}to{
+	}
+	to {
 		transform: translateX(0);
 		opacity: 1;
 	}
 }
-.eachBox{
-	animation: sildeLeft 0.5s ease-in-out !important;
+@keyframes drop {
+	from {
+		transform: translateY(-50%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
-.info{
+.eachBox {
+	/* opacity: 0; */
+	animation: sildeLeft 0.5s ease-in-out !important;
+	/* animation-delay: 1s !important; */
+}
+.info {
 	position: sticky;
 	top: 0;
-	
+}
+.bugger {
+	position: relative;
+}
+.optionConatiner {
+	position: absolute ;
+	top: 100%;
+	right: 0;
+	width: fit-content !important;
+	animation: drop 0.5s ease-in-out !important;
+	z-index: 999;
+	list-style: none;
+}
+.optionConatiner .option {
+	background: white;
+	padding: 1rem;
+	border-radius: 10px;
 }
