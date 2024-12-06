@@ -14,16 +14,16 @@ const Input = () => {
 			<div className='container-lg fixed-bottom py-2 bg-secondary mb-3 rounded-pill'>
 				<Formik
 					initialValues={{ task: "" }}
-					onSubmit={(values) => {
-						addTask([...myList,{task:values.task}]);
-						values.task = "";
-					}}
 					validate={(values) => {
 						const errors = {};
 						if (!values.task) {
 							errors.task = "Required";
 						}
 						return errors;
+					}}
+					onSubmit={(values) => {
+						addTask([...myList,{task:values.task}]);
+						values.task = "";
 					}}
 				>
 					{() => (
@@ -40,7 +40,7 @@ const Input = () => {
 								type='submit'
 								// disabled={}
 							>
-								{<i className='bi bi-send fs-4'></i>|| <span>send</span>}
+								{<i className='bi bi-pen fs-4'></i>|| <span>send</span>}
 							</button>
 						</Form>
 					)}
