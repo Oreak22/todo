@@ -109,7 +109,7 @@ const Login = () => {
                 )}
               </Formik>
             </div>
-            <div className='col-6 d-none d-lg-block border-start border-warning'>
+            <div className='col-6 d-none d-lg-block border-start'>
               <h1 className='display-3 mx-auto text-center text-warning'>
                 Oreak Todo
               </h1>

@@ -30,7 +30,7 @@ const Signin = () => {
 					style={{ height: "100dvh" }}
 				>
 					<div className='row justify-content-center align-items-center shadow-sm rounded-1 p-md-3 p-1 w-100'>
-						<div className='col-6 d-none d-lg-block border-end border-warning'>
+						<div className='col-6 d-none d-lg-block border-end'>
 							<h1 className='display-3 mx-auto text-center text-warning'>
 								Oreak Todo
 							</h1>
