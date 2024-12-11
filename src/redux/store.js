@@ -4,6 +4,10 @@ const initialState = {
 	value: 0,
 	name: "Olaoluwa",
 	myList: [],
+	token: null,
+	isAuthenticated: false,
+	isLoading: false,
+	error: null
 };
 
 export const counterSlice = createSlice({
@@ -25,6 +29,22 @@ export const counterSlice = createSlice({
 		adjustList: (state, action) => {
 			state.myList = action.payload;
 		},
+		setToken: (state, action) => {
+			state.token = action.payload;
+			state.isAuthenticated = true;
+			console.log(state.token);
+		},
+		logout: (state) => {
+			state.token = null;
+			state.isAuthenticated = false;
+		},
+		setLoading: (state, action) => {
+			state.isLoading = action.payload;
+		},
+		setError: (state, action) => {
+			state.error = action.payload;
+			state.isLoading = false;
+		},
 	},
 });
 
@@ -35,6 +55,10 @@ export const {
 	incrementByAmount,
 	nameChange,
 	adjustList,
+	setToken,
+	logout,
+	setLoading,
+	setError,
 } = counterSlice.actions;
 
 export default counterSlice.reducer;
