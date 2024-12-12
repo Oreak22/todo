@@ -16,9 +16,16 @@ const Login = () => {
     axios
       .post(`https://todoserver24.vercel.app/api/login`, { email, password })
       .then((res) => {
-        console.log(res);
         dispatch(setToken(res.data.token));
-        res.data.statusStatus ? navigate('/to-do') : setError(res.data.message);
+        if (res.data.status) {
+          localStorage.setItem(
+            'OreakTodoData',
+            JSON.stringify({ userData: res.data.data, token: res.data.token })
+          );
+          navigate('/to-do');
+        } else {
+          setError(res.data.message);
+        }
         setIsLoading(false);
       })
       .catch((err) => {

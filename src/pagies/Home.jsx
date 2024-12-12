@@ -17,7 +17,7 @@ const Home = () => {
     <>
       <nav className='navbar navbar-expand-lg navbar-light bg-light shadow-sm'>
         <div className='container-lg'>
-          <Link className='navbar-brand fw-bold text-primary' to='/'>
+          <Link className='navbar-brand fw-bold text-dark' to='/'>
             TaskMaster
           </Link>
           

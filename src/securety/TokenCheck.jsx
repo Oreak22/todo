@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode'; // Make sure to install jwt-decode
 
 const TokenCheck = () => {
-  const token = useSelector((state) => state.reducer.token);
+  const token = JSON.parse(localStorage.getItem('OreakTodoData'));
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const TokenCheck = () => {
       }
 
       try {
-        const decodedToken = jwtDecode(token);
+        const decodedToken = jwtDecode(token.token);
         const currentTime = Date.now() / 1000;
 
         // Check if token is expired
