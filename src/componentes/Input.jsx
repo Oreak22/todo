@@ -8,7 +8,7 @@ const Input = () => {
   const dispatch = useDispatch();
   const [note, setNote] = useState(false);
   const myList = useSelector((state) => state.reducer.myList);
-  const url = 'https://todoserver24.vercel.app/api/addtask';
+  const url = 'http://localhost:5022/api/addtask';
   const addTask = (task, notes) => {
     axios
       .post(url, notes)
@@ -34,11 +34,10 @@ const Input = () => {
             return errors;
           }}
           onSubmit={(values) => {
-            console.log(JSON.parse(localStorage.OreakTodoData).userData.id);
-            addTask([...myList, { task: values.task }], {
+            addTask([...myList, { title: values.task }], {
               title: values.task,
               description: note ? values.note : null,
-              user: JSON.parse(localStorage.OreakTodoData).userData.id,
+              user: JSON.parse(localStorage.OreakTodoData).userData._id,
             });
             values.task = '';
             values.note = '';

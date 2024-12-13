@@ -33,7 +33,7 @@ const TokenCheck = () => {
     };
 
     checkToken();
-  }, [token, navigate]);
+  }, [navigate]);
 
   return null; // This component doesn't render anything
 };

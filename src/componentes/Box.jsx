@@ -5,6 +5,7 @@ import Edit from './Edit';
 import Explain from './Explain';
 
 const Box = ({ task, index }) => {
+  const [notFresh, setnotFresh] = useState(false)
   const [options, setOptions] = useState(false);
   const [workOn, setworkOn] = useState(false);
   const [editing, setEditing] = useState(false);
@@ -32,6 +33,7 @@ const Box = ({ task, index }) => {
     setdeleting(false);
     setExplain(false);
   };
+  console.log(Date())
   return (
     <>
       <div
@@ -45,7 +47,7 @@ const Box = ({ task, index }) => {
         <div className='bugger'>
           <button
             className='btn shadow-0 h-100 px-0'
-            onClick={() => setOptions(!options)}>
+            onClick={() => setOptions(!options)} disabled={notFresh}>
             <i className='bi bi-three-dots-vertical'></i>
           </button>
           {options && (
