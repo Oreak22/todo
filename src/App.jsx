@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5022/api/getTodo', {
+      .get('https://todoserver24.vercel.app/api/getTodo', {
         headers: {
           userid: JSON.parse(localStorage.OreakTodoData).userData._id,
         },
