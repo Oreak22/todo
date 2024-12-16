@@ -35,12 +35,13 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path='/signin' element={<Signin/>} />
-        <Route path='/login'   element={<Login />} />
-        <Route path='/to-do' element={<Home />} />
-        <Route path='/' element={<Home />} />
-      </Routes>
+    <Home/>
+    //   <Routes>
+    //     <Route path='/signin' element={<Signin/>} />
+    //     <Route path='/login'   element={<Login />} />
+    //     <Route path='/to-do' element={<Home />} />
+    //     <Route path='/' element={<Home />} />
+    //   </Routes>
     </>
   );
 }
