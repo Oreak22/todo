@@ -6,6 +6,8 @@ import Input from '../componentes/Input';
 import '../style/style.css';
 import List from '../componentes/List';
 import { Link } from 'react-router-dom';
+import TokenCheck from '../securety/TokenCheck';
+// import TokenCheck from '../componentes/TokenCheck';
 
 const Home = () => {
   const count = useSelector((state) => state.reducer.name);
@@ -15,6 +17,7 @@ const Home = () => {
   const splitDate = Date().split(' ');
   return (
     <>
+      <TokenCheck />
       <nav className='navbar navbar-expand-lg navbar-light bg-light shadow-sm'>
         <div className='container-lg'>
           <Link className='navbar-brand fw-bold text-dark' to='/'>

@@ -35,7 +35,6 @@ function App() {
 
   return (
     <>
-      <TokenCheck />
       <Routes>
         <Route path='/' element={<Signin />} />
         <Route path='/login' element={<Login />} />
