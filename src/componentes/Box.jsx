@@ -33,7 +33,6 @@ const Box = ({ task, index }) => {
     setdeleting(false);
     setExplain(false);
   };
-  console.log(Date())
   return (
     <>
       <div
