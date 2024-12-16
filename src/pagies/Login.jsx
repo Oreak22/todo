@@ -101,7 +101,7 @@ const Login = () => {
                         Dont't have an account?{' '}
                         <Link
                           className='text-decoration-none text-warning'
-                          to='/'>
+                          to='/signin'>
                           Signin
                         </Link>
                       </div>
