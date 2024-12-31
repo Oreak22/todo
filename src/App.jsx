@@ -14,31 +14,31 @@ function App() {
   const navigate = useNavigate();
   const oreakTodoData = localStorage.getItem('OreakTodoData');
   const myList = useSelector((state) => state.reducer.list);
-  useEffect(() => {
-    if (oreakTodoData) {
-      axios
-        .get('https://todoserver24.vercel.app/api/getTodo', {
-          headers: {
-            userid: JSON.parse(localStorage.OreakTodoData).userData._id,
-          },
-        })
-        .then((res) => {
-          if (res.data.status) {
-            dispatch(setList([...res.data.data]));
-          } else {
-            dispatch(setList([...res.data.data]));
-          }
-        })
-        .catch((error) => {
-          console.error('Error fetching todos:', error);
-          dispatch(setList([{ task: 'jfgbi' }]));
-        });
-    } else {
-      navigate('/signin');
-    }
+  // useEffect(() => {
+  //   if (oreakTodoData) {
+  //     axios
+  //       .get('https://todoserver24.vercel.app/api/getTodo', {
+  //         headers: {
+  //           userid: JSON.parse(localStorage.OreakTodoData).userData._id,
+  //         },
+  //       })
+  //       .then((res) => {
+  //         if (res.data.status) {
+  //           dispatch(setList([...res.data.data]));
+  //         } else {
+  //           dispatch(setList([...res.data.data]));
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         console.error('Error fetching todos:', error);
+  //         dispatch(setList([{ task: 'jfgbi' }]));
+  //       });
+  //   } else {
+  //     navigate('/signin');
+  //   }
 
-    // dispatch(setList(myList()));
-  }, [myList]);
+  //   // dispatch(setList(myList()));
+  // }, [myList]);
 
   return (
     <>

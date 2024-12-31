@@ -8,7 +8,7 @@ const Input = () => {
   const dispatch = useDispatch();
   const [note, setNote] = useState(false);
   const myList = useSelector((state) => state.reducer.myList);
-  const url = 'http://localhost:5022/api/addtask';
+  const url = 'https://todoserver24.vercel.app/api/addtask';
   const addTask = (task, notes) => {
     axios
       .post(url, notes)

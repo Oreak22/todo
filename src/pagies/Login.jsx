@@ -17,14 +17,18 @@ const Login = () => {
       .post(`https://todoserver24.vercel.app/api/login`, { email, password })
       .then((res) => {
         dispatch(setToken(res.data.token));
-        if (res.data.status) {
+        if (res.data.statusStatus) {
+          console.log(res.data)
           localStorage.setItem(
             'OreakTodoData',
             JSON.stringify({ userData: res.data.data, token: res.data.token })
           );
           navigate('/to-do');
+          
         } else {
           setError(res.data.message);
+          
+          console.log(res.data)
         }
         setIsLoading(false);
       })
